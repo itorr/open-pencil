@@ -40,6 +40,7 @@
 
 ### Fixed
 
+- Keep button labels on one line when controls are constrained by surrounding layouts.
 - Resolve `$name` references in imported `.pen` fills, stroke fills, font families, dimensions, and spacing without requiring a `--` prefix. (#563)
 - Prevent the stock photo tool from replacing text, lines, structural layers, or containers with content while supporting closed shape geometry.
 - Preserve explicit text alignment metadata on imported Figma vectors across save and reload.

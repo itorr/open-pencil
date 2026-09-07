@@ -43,3 +43,17 @@ test('rulers follow the active theme', async () => {
   })
   await page.waitForFunction(() => document.documentElement.dataset.theme === 'dark')
 })
+
+test('button labels stay on one line when space is constrained', async () => {
+  const whiteSpace = await editor.page.evaluate(() => {
+    const button = document.createElement('button')
+    button.textContent = '两字'
+    button.style.width = '1px'
+    document.body.append(button)
+    const value = getComputedStyle(button).whiteSpace
+    button.remove()
+    return value
+  })
+
+  expect(whiteSpace).toBe('nowrap')
+})
